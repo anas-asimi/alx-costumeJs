@@ -1,8 +1,8 @@
 // boolean to pervert redoing the indexing
-already = false
+let already = false
 
 // strating
-console.log("starting the script");
+console.log("starting the script v1.0");
 
 // check if QA is avaible
 if (isQA_avaible() == false) {
