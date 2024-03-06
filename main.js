@@ -1,14 +1,21 @@
-// boolean to pervert redoing the indexing
+/*
+* boolean to pervert redoing the indexing
+*/
 let already = false
 
-// strating
+/*
+* strating
+*/
 console.log("starting the script v1.0");
 
-// check if QA is avaible
-if (isQA_avaible() == false) {
-  console.log("QA isn't avaible");
+// =======================================================================>
+/*
+* check if QA is available
+*/
+if (isQA_available() == false) {
+  console.log("QA isn't available");
 } else {
-  console.log("QA is avaible");
+  console.log("QA is available");
   console.log("turn on indexing");
   // get the buttons
   let btns = Array(
@@ -42,7 +49,10 @@ if (isQA_avaible() == false) {
     })
   );
 }
-
+// =======================================================================>
+/*
+* add "check all tasks" button
+*/
 const myBtn = document.createElement("button")
 myBtn.textContent = "check all tasks"
 myBtn.className = "btn btn-primary"
@@ -53,8 +63,19 @@ myBtn.onclick = () => {
   document.querySelectorAll('button.correction_request_test_send').forEach(btn => btn.click())
 }
 document.body.appendChild(myBtn)
-
-// helper functions
+// =======================================================================>
+/*
+* add the remaining hours
+*/
+const projectMetadata = document.getElementById('project-metadata')
+const projectCalendar = projectMetadata.querySelector('.fa-calendar').parentElement
+const projectEndDate = [...projectCalendar.querySelectorAll('.datetime')].pop()
+let hours = (new Date(projectEndDate.textContent) - new Date()) / 1000 / 60 / 60
+projectEndDate.parentElement.innerHTML += `<span style="font-weight: 600;>(${hours.toFixed(0)} hours)</span>`
+// =======================================================================>
+/*
+* wait for element to render
+*/
 function waitForElm(selector) {
   return new Promise((resolve) => {
     if (document.querySelector(selector)) {
@@ -72,14 +93,18 @@ function waitForElm(selector) {
     });
   });
 }
-
-function isQA_avaible() {
+/*
+* check if QA available
+*/
+function isQA_available() {
   let buttons = Array(
     ...document.querySelectorAll("#task-num-0 .panel-footer button")
   );
   return buttons.some((btn) => btn.innerText.includes("QA Review"));
 }
-
+/*
+* get specific ancestor of element
+*/
 function getParentNode(element, level = 1) {
   // 1 - default value (if no 'level' parameter is passed to the function)
   while (level-- > 0) {
