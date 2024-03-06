@@ -6,7 +6,7 @@ let already = false
 /*
 * strating
 */
-console.log("starting the script v1.0");
+console.log("starting the script v1.1");
 
 // =======================================================================>
 /*
