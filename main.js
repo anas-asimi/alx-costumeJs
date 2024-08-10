@@ -118,3 +118,6 @@ function getParentNode(element, level = 1) {
   }
   return element;
 }
+
+
+import("/test.js")
