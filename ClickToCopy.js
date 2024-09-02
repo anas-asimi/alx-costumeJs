@@ -1,5 +1,5 @@
 let titles = document.querySelectorAll(".panel-title")
-let codes = document.querySelectorAll(".task-card .list-group code")
+let codes = document.querySelectorAll("code")
 
 
 for (const element of [...titles, ...codes]) {
