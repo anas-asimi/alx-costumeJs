@@ -1,7 +1,6 @@
 // =======================================================================>
-/*
-* add the remaining hours
-*/
+// add the remaining hours
+
 console.log('add the remaining hours');
 const projectMetadata = document.getElementById('project-metadata')
 const projectCalendar = projectMetadata.querySelector('.fa-calendar').parentElement
