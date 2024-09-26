@@ -9,7 +9,7 @@ const filesNames = ['remainingHours', 'IndexingQA', 'ClickToCopy','Add_summary']
 const PAGE_URL = document.URL
 const PREFIX = 'https://intranet.alxswe.com/projects'
 
-if (PAGE_URL.startsWith(prefix)) {
+if (PAGE_URL.startsWith(PREFIX)) {
   for (const fileName of filesNames) {
     import(PATH + fileName + EXTENSION)
   }
